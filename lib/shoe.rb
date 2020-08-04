@@ -1,9 +1,20 @@
+require 'pry'
+
 class Shoe
   attr_accessor :color, :size, :material, :condition
   attr_reader :brand
 
+  BRANDS=[]
+
   def initialize(brand)
     @brand = brand
+    index=0
+    while index <= BRANDS.length
+      if !(BRANDS.include?(brand))
+        BRANDS << brand
+      end
+      index+=1
+    end
   end
 
   def cobble
